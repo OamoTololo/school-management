@@ -1,3 +1,10 @@
+/* start of carousel */
+.carousel-item img {
+    width: 20px;
+    height: 10px;
+}
+/* end of carousel*/
+
 /* start of navbar */
     /* start of login-user*/
 

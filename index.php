@@ -8,6 +8,7 @@
         <!-- Start of col-lg-12 -->
         <div class="col-lg-12">
             <?php include ('inc/navbar.php'); ?>
+            <?php include ('inc/slider.php'); ?>
         </div>
         <!-- End of col-lg-12 -->
     </div>
