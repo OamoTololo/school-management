@@ -151,3 +151,12 @@ student_id INT(10) NOT NULL,
 message TEXT NOT NULL,
 message_date TIMESTAMP NOT NULL
 );
+
+CREATE TABLE review
+(
+review_id INT PRIMARY KEY AUTO_INCREMENT,
+review_name VARCHAR(50) NOT NULL,
+review_image VARCHAR(250) NOT NULL,
+review VARCHAR(255) NOT NULL,
+review_date VARCHAR(80) NOT NULL
+);

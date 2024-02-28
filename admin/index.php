@@ -10,6 +10,7 @@ if (!isset($_SESSION['username'])) {
 require_once('inc/top.php');
 
 //variables
+$websiteLogo = "Sosha IT Academy";
 ?>
 
 <div class="container-fluid">
@@ -27,7 +28,7 @@ require_once('inc/top.php');
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-center text-white bg-dark">Stats Overview of Sosha IT Academy</h2>
+                    <h2 class="text-center text-white bg-dark">Stats Overview of <?php echo $websiteLogo;?></h2>
                 </div>
 
                 <div class="col-md-3">
