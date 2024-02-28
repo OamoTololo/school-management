@@ -74,7 +74,7 @@
                     <i class="fa-solid fa-cog"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="admin/login.php"> Admin</a>
+                    <a class="dropdown-item" href="./admin/login.php"> Admin</a>
                     <a class="dropdown-item" href="#"> Lecturer</a>
                     <a class="dropdown-item" href="login.php"> Student</a>
                 </div>
