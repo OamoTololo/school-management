@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="about-us.php">
+                <a class="nav-link text-white" href="gallery.php">
                     <i class="fa-solid fa-camera"></i> Add Gallery
                 </a>
             </li>
@@ -24,18 +24,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="student.php">
+                <a class="nav-link text-white" href="ad.php">
                     <i class="fa-solid fa-user"></i> Add Ad
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="other-stuff.php" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle text-white" href="course.php" role="button"
+                   data-toggle="dropdown"
                    aria-expanded="false">
                     <i class="fa-solid fa-graduation-cap"></i> Create Masters
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="result.php"> Create Category</a>
-                    <a class="dropdown-item" href="result.php"> Create course</a>
+                    <a class="dropdown-item" href="category.php"> Create Category</a>
+                    <a class="dropdown-item" href="course.php"> Create course</a>
                 </div>
             </li>
         </ul>
