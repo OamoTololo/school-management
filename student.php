@@ -52,7 +52,7 @@ include 'inc/top.php';
                     <th>Tololo</th>
                     <th>10</th>
                     <th>10/CBSE/ENG</th>
-                    <th><img src="images/image1.jpg" class="img-fluid" width="100px;" /></th>
+                    <th><img src="images/image1.jpg" class="img-fluid" width='100px;' /></th>
                 </tr>
                 </tbody>
             </table>
