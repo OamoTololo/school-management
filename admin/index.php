@@ -32,24 +32,25 @@ $websiteLogo = "Sosha IT Academy";
                 </div>
 
                 <div class="col-md-3">
-                    <div class="card text-primary border-dark">
-                        <div class="card-header bg-dark  text-white">Students</div>
+                    <div class="card text-primary border-info">
+                        <div class="card-header bg-info  text-white">Students</div>
                         <div class="card-body">
-                            <table class="table table-bordered table-co">
+                            <table class="table table-bordered">
                                 <tbody>
+                                <?php
+                                    for($i = 0; $i <= 10; $i++) {
+                                        $student = "SELECT * FROM student WHERE student_class = '$i'";
+                                        $runStudent = mysqli_query($connection, $student);
+                                        $studentRow = mysqli_num_rows($runStudent);
+                                ?>
                                     <tr>
-                                        <th class="bg-dark text-white">Class 1</th>
-                                        <th>0</th>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg-dark text-white">Class 2</th>
-                                        <th>0</th>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg-dark text-white">Class 3</th>
-                                        <th>0</th>
+                                        <th class="bg-light text-dark">Class <?php echo $i ;?></th>
+                                        <th class="text-danger"><?php echo  $studentRow; ?></th>
                                     </tr>
                                 </tbody>
+                                <?php
+                                }
+                                ?>
                             </table>
                         </div>
                     </div>
@@ -60,17 +61,38 @@ $websiteLogo = "Sosha IT Academy";
                         <div class="card-body">
                             <table class="table table-bordered">
                                 <tbody>
+                                <?php
+                                    $studentTotalFee = "SELECT * FROM student";
+                                    $runStudentTotalFee = mysqli_query($connection, $studentTotalFee);
+                                    $studentTotalFee = 0;
+                                    $totalFeesAmount = 0;
+
+                                    while ($studentTotalFeeRow = mysqli_fetch_array($runStudentTotalFee)) {
+                                        $studentTotalFee = $studentTotalFeeRow['student_fee'];
+                                        $totalFeesAmount += $studentTotalFee;
+                                    }
+
+                                    $feeAmount = "SELECT * FROM fee";
+                                    $runFee = mysqli_query($connection, $feeAmount);
+                                    $fees = 0;
+                                    $feeAmount = 0;
+
+                                    while ($feeAmountRow = mysqli_fetch_array($runFee)) {
+                                        $fees = $feeAmountRow['fees'];
+                                        $feeAmount += $fees;
+                                    }
+                                ?>
                                 <tr>
                                     <th class="bg-light text-dark">Total Fees</th>
-                                    <th>0</th>
+                                    <th>R <?php echo $totalFeesAmount;?></th>
                                 </tr>
                                 <tr>
                                     <th class="bg-light text-dark">Collected Fees</th>
-                                    <th>0</th>
+                                    <th>R <?php echo $feeAmount;?></th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-dark text-white">Remaining Fees</th>
-                                    <th>0</th>
+                                    <th class="bg-light text-danger">Remaining Fees</th>
+                                    <th class="text-danger">R <?php echo $totalFeesAmount - $feeAmount;?></th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -82,17 +104,28 @@ $websiteLogo = "Sosha IT Academy";
                         <div class="card-body">
                             <table class="table table-bordered table-co">
                                 <tbody>
+                                <?php
+                                    $expense = "SELECT * FROM expense";
+                                    $runExpense = mysqli_query($connection, $expense);
+                                    $expenseAmount = 0;
+                                    $totalExpense = 0;
+
+                                    while ($rowExpense = mysqli_fetch_array($runExpense)) {
+                                        $expenseAmount = $rowExpense['expense_amount'];
+                                        $totalExpense += $expenseAmount;
+                                    }
+                                ?>
                                 <tr>
                                     <th class="bg-light text-dark">Collected Fees</th>
-                                    <th>0</th>
+                                    <th>R <?php echo $feeAmount;?></th>
                                 </tr>
                                 <tr>
                                     <th class="bg-light text-dark">Spent Fees</th>
-                                    <th>0</th>
+                                    <th>R <?php echo $totalExpense;?></th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-dark text-white">Remaining Balance</th>
-                                    <th>0</th>
+                                    <th class="bg-light text-danger">Remaining Balance</th>
+                                    <th class="text-danger">R <?php echo $feeAmount - $expenseAmount;?></th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -102,31 +135,41 @@ $websiteLogo = "Sosha IT Academy";
 
                 </div>
                 <div class="col-md-5">
-                    <div class="card text-primary border-dark">
-                        <div class="card-header bg-dark  text-white">Expenses <small>( Last 10 expenses )</small></div>
+                    <div class="card text-primary border-info">
+                        <div class="card-header bg-info text-white">Expenses <small>( Last 10 expenses )</small></div>
                         <div class="card-body">
                             <table class="table table-bordered table-co">
-                                <thead class="thead-dark">
+                                <thead class="">
                                     <tr>
-                                        <th class="text-light">Sr No</th>
-                                        <th class="text-light">Date</th>
-                                        <th class="text-light">Amount</th>
-                                        <th class="text-light">Particular</th>
+                                        <th class="text-dark">Sr No</th>
+                                        <th class="text-dark">Date</th>
+                                        <th class="text-dark">Amount</th>
+                                        <th class="text-dark">Particular</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                    $expenses = "SELECT * FROM expenses ORDER BY  expense_id DESC LIMIT 10";
+                                    $runExpenses = mysqli_query($connection, $expenses);
+                                    $expenseId = 0;
+
+                                    while ($rowExpenses = mysqli_fetch_array($runExpenses)) {
+                                        $expenseAmount = $rowExpenses['expense_amount'];
+                                        $expenseDescription = $rowExpenses['expense_particular'];
+                                        $expenseDate = $rowExpenses['expense_date'];
+
+                                        $expenseId =+ $expenseId;
+
+                                ?>
                                 <tr>
-                                    <td class="bg-light text-dark">1</td>
-                                    <td class="bg-light text-dark">dd/mm/yyyy</td>
-                                    <td class="bg-light text-dark">R0</td>
-                                    <td class="bg-light text-dark">Mobile bill</td>
+                                    <td class="bg-light text-danger"><?php echo $expenseId; ?></td>
+                                    <td class="bg-light text-danger"><?php echo  $expenseDate; ?>></td>
+                                    <td class="bg-light text-danger">R <?php echo $expenseAmount?></td>
+                                    <td class="bg-light text-danger"><?php echo $expenseDescription;?></td>
                                 </tr>
-                                <tr>
-                                    <td class="bg-light text-dark">2</td>
-                                    <td class="bg-light text-dark">dd/mm/yyyy</td>
-                                    <td class="bg-light text-dark">R0</td>
-                                    <td class="bg-light text-dark">Light bill</td>
-                                </tr>
+                                <?php
+                                    }
+                                ?>
                                 </tbody>
                             </table>
                         </div>

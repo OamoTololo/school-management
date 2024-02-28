@@ -55,8 +55,8 @@ $feeRow = mysqli_num_rows($runFee);
 
 ?>
 
-<div class="list-group">
-    <a href="index.php" class="list-group-item list-group-item-action active">
+<div class="list-group bg-dark">
+    <a href="index.php" class="list-group-item list-group-item-action bg-dark text-white">
         <i class="fa fa-tachometer"></i> Dashboard
     </a>
     <a href="../gallery.php" class="list-group-item list-group-item-action">
