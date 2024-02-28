@@ -59,3 +59,6 @@
     </div>
 </div>
 <!-- End of container -->
+</body>
+
+</html>
