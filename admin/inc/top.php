@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/custom.css"/>
     <link rel="stylesheet" href="css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet"/>
+    <link href="plugin/datatable/datatables.css" rel="stylesheet">
 
     <script>
         body{
@@ -21,6 +22,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="plugins/datatable/datatables.js"></script>
 
 </head>
 

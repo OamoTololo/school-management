@@ -45,8 +45,8 @@ if (isset($_GET['del'])) {
                     <div align="right">
                         <a href="add-gallery.php" class="btn btn-outline-info">Add Image</a>
                     </div>
-                    <table class="table table-bordered mt-3">
-                        <thead>
+                    <table class="table table-bordered mt-3" id="tableToExcel">
+                        <thead class="bg-dark text-white">
                             <tr>
                                 <th>Image Id</th>
                                 <th>Image Title</th>
@@ -106,3 +106,9 @@ if (isset($_GET['del'])) {
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function (){
+        $('#tableToExcel').dataTable();
+    });
+</script>
