@@ -125,7 +125,7 @@ $websiteLogo = "Sosha IT Academy";
                                 </tr>
                                 <tr>
                                     <th class="bg-light text-danger">Remaining Balance</th>
-                                    <th class="text-danger">R <?php echo $feeAmount - $expenseAmount;?></th>
+                                    <th class="text-danger">R <?php echo $feeAmount - $totalExpense;?></th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -149,7 +149,7 @@ $websiteLogo = "Sosha IT Academy";
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $expenses = "SELECT * FROM expenses ORDER BY  expense_id DESC LIMIT 10";
+                                    $expenses = "SELECT * FROM expense ORDER BY  expense_id ASC LIMIT 10";
                                     $runExpenses = mysqli_query($connection, $expenses);
                                     $expenseId = 0;
 
@@ -158,12 +158,12 @@ $websiteLogo = "Sosha IT Academy";
                                         $expenseDescription = $rowExpenses['expense_particular'];
                                         $expenseDate = $rowExpenses['expense_date'];
 
-                                        $expenseId =+ $expenseId;
+                                        $expenseId = $expenseId + 1;
 
                                 ?>
                                 <tr>
                                     <td class="bg-light text-danger"><?php echo $expenseId; ?></td>
-                                    <td class="bg-light text-danger"><?php echo  $expenseDate; ?>></td>
+                                    <td class="bg-light text-danger"><?php echo  $expenseDate; ?></td>
                                     <td class="bg-light text-danger">R <?php echo $expenseAmount?></td>
                                     <td class="bg-light text-danger"><?php echo $expenseDescription;?></td>
                                 </tr>

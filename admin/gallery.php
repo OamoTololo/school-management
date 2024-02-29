@@ -17,7 +17,7 @@ if (isset($_GET['del'])) {
     $deleteId = $_GET['del'];
 
     $deleteQuery = "DELETE FROM gallery WHERE gallery_id = '$deleteId'";
-    $runDelete = mysqli_query($connetion, $deleteQuery);
+    $runDelete = mysqli_query($connection, $deleteQuery);
 
     if ($runDelete) {
         echo "<script>alert('Image deleted successfully')</script>";
@@ -61,8 +61,8 @@ if (isset($_GET['del'])) {
                         </thead>
                         <tbody>
                         <?php
-                            $gallery = "SELECT * FROM gallery ORDER BY gallery_id DESC";
-                            $runGallery = mysqli_query($connetion, $gallery);
+                            $gallery = "SELECT * FROM gallery ORDER BY gallery_id ASC";
+                            $runGallery = mysqli_query($connection, $gallery);
                             $i = 0;
 
                             while ($rowGalley = mysqli_fetch_array($runGallery)) {
@@ -80,13 +80,13 @@ if (isset($_GET['del'])) {
                                      width="100px;">
                             </td>
                             <td>
-                                <a class="btn btn-warning" href="edit-gallery.php?edit=<?php ;?>">
+                                <a class="btn btn-info" href="edit-gallery.php?id=<?php echo $galleryId;?>">
                                     <i class="fa fa-pencil-square"></i>
                                 </a>
                             </td>
                             <td>
-                                <a class="btn btn-danger" href="delete-gallery.php?del=<?php ;?>">
-                                    <i class="fa fa-pencil-square"></i>
+                                <a class="btn btn-danger" href="gallery.php?del=<?php echo $galleryId;?>">
+                                    <i class="fa fa-trash"></i>
                                 </a>
                             </td>
                         </tr>
