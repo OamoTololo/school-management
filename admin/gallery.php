@@ -76,7 +76,7 @@ if (isset($_GET['del'])) {
                             <td><?php echo $i;?></td>
                             <td><?php echo ucfirst($galleryTitle);?></td>
                             <td>
-                                <img class="img-fluid" src="../images/gallery/<?php echo $galleryImage; ?>"
+                                <img class="img-fluid rounded" src="../images/gallery/<?php echo $galleryImage; ?>"
                                      width="100px;">
                             </td>
                             <td>
