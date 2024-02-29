@@ -59,73 +59,73 @@ $feeRow = mysqli_num_rows($runFee);
     <a href="index.php" class="list-group-item list-group-item-action bg-dark text-white">
         <i class="fa fa-tachometer"></i> Dashboard
     </a>
-    <a href="../gallery.php" class="list-group-item list-group-item-action">
+    <a href="../admin/gallery.php" class="list-group-item list-group-item-action">
         <i class="fa fa-camera"></i> Gallery
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $galleryRow;?></span>
         </button>
     </a>
-    <a href="../student.php" class="list-group-item list-group-item-action">
+    <a href="../admin/student.php" class="list-group-item list-group-item-action">
         <i class="fa fa-user"></i> Students
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $studentRow;?></span>
         </button>
     </a>
-    <a href="../review.php" class="list-group-item list-group-item-action">
+    <a href="../admin/review.php" class="list-group-item list-group-item-action">
         <i class="fa fa-star"></i> Reviews
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $reviewRow;?></span>
         </button>
     </a>
-    <a href="../course.php" class="list-group-item list-group-item-action">
+    <a href="../admin/course.php" class="list-group-item list-group-item-action">
         <i class="fa fa-life-ring"></i> Batches
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $courseRow;?></span>
         </button>
     </a>
-    <a href="../register.php" class="list-group-item list-group-item-action">
+    <a href="../admin/register.php" class="list-group-item list-group-item-action">
         <i class="fa fa-lightbulb"></i> Registrations
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $registerRow;?></span>
         </button>
     </a>
 
-    <a href="../fees.php" class="list-group-item list-group-item-action">
+    <a href="../admin/fees.php" class="list-group-item list-group-item-action">
         <i class="fa fa-money-bill"></i> Fees
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $feeRow;?></span>
         </button>
     </a>
 
-    <a href="../category.php" class="list-group-item list-group-item-action">
+    <a href="../admin/category.php" class="list-group-item list-group-item-action">
         <i class="fa fa-sort"></i> Category
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $categoryRow;?></span>
         </button>
     </a>
 
-    <a href="../expense.php" class="list-group-item list-group-item-action">
+    <a href="../admin/expense.php" class="list-group-item list-group-item-action">
         <i class="fa fa-money-bill"></i> Expenses
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $expenseRow;?></span>
         </button>
     </a>
 
-    <a href="../exam.php" class="list-group-item list-group-item-action">
+    <a href="../admin/exam.php" class="list-group-item list-group-item-action">
         <i class="fa fa-question"></i> Exam
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $examRow;?></span>
         </button>
     </a>
 
-    <a href="../message.php" class="list-group-item list-group-item-action">
+    <a href="../admin/message.php" class="list-group-item list-group-item-action">
         <i class="fa fa-envelope"></i> Message(s)
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $messageRow;?></span>
         </button>
     </a>
 
-    <a href="../complaint.php" class="list-group-item list-group-item-action">
+    <a href="../admin/complaint.php" class="list-group-item list-group-item-action">
         <i class="fa fa-window-close"></i> Complaints
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $messageToClassesRow;?></span>
