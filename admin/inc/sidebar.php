@@ -78,7 +78,7 @@ $feeRow = mysqli_num_rows($runFee);
         </button>
     </a>
     <a href="../admin/course.php" class="list-group-item list-group-item-action">
-        <i class="fa fa-life-ring"></i> Batches
+        <i class="fa fa-life-ring"></i> Courses
         <button type="button" class="btn btn-primary pull-right btn-sm">
             <span class="badge badge-light text-danger"><?php echo $courseRow;?></span>
         </button>

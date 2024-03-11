@@ -8,6 +8,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 require_once('inc/top.php');
+require_once('inc/db.php');
 
 //variables
 $websiteLogo = "Sosha IT Academy";
