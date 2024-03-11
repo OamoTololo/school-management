@@ -43,7 +43,7 @@ if (isset($_GET['del'])) {
                 <div class="col-md-12">
                     <h2 class="text-center text-white bg-dark"><?php echo $headerLabel;?></h2>
                     <div align="right">
-                        <a href="add-student.php" class="btn btn-outline-info">Add Student</a>
+                        <a href="add-student.php" class="btn btn-outline-dark">Add Student</a>
                     </div>
                     <table class="table table-bordered mt-3" id="tableToExcel">
                         <thead class="bg-dark text-white">
@@ -51,7 +51,7 @@ if (isset($_GET['del'])) {
                             <th>Sr No</th>
                             <th>Student Name</th>
                             <th>Gender</th>
-                            <th>Batch</th>
+                            <th>Course</th>
                             <th>DOB</th>
                             <th>Image</th>
                             <th>
@@ -81,13 +81,6 @@ if (isset($_GET['del'])) {
                             $dob = $rowStudent['student_dob'];
                             $image = $rowStudent['student_image'];
                             $i++;
-
-                            $course = "SELECT * FROM course WHERE course_id = '$batch'";
-                            $runCourse = mysqli_query($connection, $course);
-                            $rowCourse = mysqli_fetch_array($runCourse);
-
-                            $courseId = $rowCourse['course_id'];
-                            $courseName = $rowCourse['course_name'];
                             ?>
                             <tr>
                                 <td><?php echo $i;?></td>
@@ -96,7 +89,7 @@ if (isset($_GET['del'])) {
                                 <td><?php echo ucfirst($batch);?></td>
                                 <td><?php echo ucfirst($dob);?></td>
                                 <td>
-                                    <img class="img-fluid rounded" src="../images/student/<?php echo $image; ?>"
+                                    <img class="img-fluid rounded" src="../admin/images/student/<?php echo $image; ?>"
                                          width="100px;">
                                 </td>
                                 <td>
